@@ -6,5 +6,6 @@ fun main() {
     println("Day 2, second part: " + PasswordPhilosophy().solveSecondPart())
 
     println("Day 3, first part: " + TobogganTrajectory().solveFirstPart())
+    println("Day 3, second part: " + TobogganTrajectory().solveSecondPart())
 }
 
