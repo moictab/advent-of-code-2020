@@ -10,5 +10,7 @@ fun main() {
 
     println("Day 4, first part: " + PassportProcessing().solveFirstPart())
     println("Day 4, second part: " + PassportProcessing().solveSecondPart())
+
+    println("Day 5, first part: " + BinaryBoarding().solveFirstPart())
 }
 
