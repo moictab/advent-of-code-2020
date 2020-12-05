@@ -4,6 +4,8 @@ class BinaryBoarding {
 
     private val input: File = File(javaClass.getResource("day-5-input.txt").file)
 
+    private val ids = arrayListOf<Int>()
+
     fun solveFirstPart(): Int {
         var highest = 0
 
@@ -11,12 +13,34 @@ class BinaryBoarding {
             val row = getRow(it.substring(0, 7))
             val column = getColumn(it.substring(7, 10))
 
+            this.ids.add(row * 8 + column)
+
             if (row * 8 + column > highest) {
                 highest = row * 8 + column
             }
         }
 
         return highest
+    }
+
+    fun solveSecondPart(): Int {
+        this.input.forEachLine {
+            val row = getRow(it.substring(0, 7))
+            val column = getColumn(it.substring(7, 10))
+
+            this.ids.add(row * 8 + column)
+        }
+
+        this.ids.sort()
+        this.ids.reverse()
+
+        for (i in 0..ids.size) {
+            if (ids[i] - ids[i + 1] == 2) {
+                return ids[i + 1] + 1
+            }
+        }
+
+        throw IllegalStateException("Not found")
     }
 
     private fun getRow(input: String): Int {
