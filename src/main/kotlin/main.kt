@@ -13,5 +13,8 @@ fun main() {
 
     println("Day 5, first part: " + BinaryBoarding().solveFirstPart())
     println("Day 5, second part: " + BinaryBoarding().solveSecondPart())
+
+    println("Day 6, first part: " + CustomCustoms().solveFirstPart())
+    println("Day 6, second part: " + CustomCustoms().solveSecondPart())
 }
 
